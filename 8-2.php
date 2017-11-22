@@ -6,69 +6,30 @@
         array('vardas' => 'Marytė', 'lytis' => 'M'),
         array('vardas' => 'Eglė', 'lytis' => 'M'));
 
-        
 
-     foreach($zmones as $k => $v)
+echo "<b>Galimi poru variantai: </b><br>";
+if ($zmones) {
+
+for ($i =0; $i<count($zmones); $i++)
 {
-if ($v['lytis']=="V"){
-    foreach($zmones as $k => $v1){
-
-        if ($v1['lytis']=="M") {
-        foreach($zmones as $k => $v2){
-            if ($v2['lytis']=="V") {
-                
-                    
-                        echo $v['vardas']." ".$v1['vardas']." ".$v2['vardas'];
-                        echo "<br>";
-                            }
-                            else {
-                            echo $v['vardas']." ".$v1['vardas']." ".$v2['vardas'];
-                            echo "<br>";
-                            }
-    }
-}
-
-    }
-}
-
-
-
-
-
-
-}
-foreach($zmones as $k => $v)
+for ($j = $i + 1; $j<count($zmones) ; $j++)
 {
-if ($v['lytis']=="M"){
-    foreach($zmones as $k => $v1){
+    for ($k = $j+1; $k<count($zmones); $k++)
+{
+if ($zmones[$i]['lytis'] != $zmones[$j]['lytis'] ||
+$zmones[$j]['lytis'] != $zmones[$k]['lytis']){
 
-        if ($v1['lytis']=="V") {
-        foreach($zmones as $k => $v2){
-            if ($v2['lytis']=="V") {
-                
-                    
-                        echo $v['vardas']." ".$v1['vardas']." ".$v2['vardas'];
-                        echo "<br>";
-                            }
-                            else {
-                            echo $v['vardas']." ".$v1['vardas']." ".$v2['vardas'];
-                            echo "<br>";
-                            }
+echo $zmones[$i]['vardas']."($i)-".$zmones[$j]['vardas']."($j)-".$zmones[$k]['vardas']."($k)<br>";
+
+      }
     }
 }
-
-    }
-}
-
-
-
-
-
-
-}
-
-
-
+      }
+      }
+      else 
+      {
+          echo "Nera duomenu";
+      }
 
 ?>
 
