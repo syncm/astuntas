@@ -66,8 +66,7 @@ var_dump($mokiniai);
 <?php echo $dalykas. ': '; 
 
  foreach ($pazymiai as $pazymys): 
- echo $pazymys. ' '; 
-
+    echo $mokiniai[$i]['vidurkis'].' ';
  endforeach; ?>
 
 
